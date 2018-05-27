@@ -1,17 +1,23 @@
 #Juego del ahorcado
 import os
-import time
 import random
+import platform
 
+aos = platform.system()
 idraw = ['|------------------|\n|                  |\n|                  |\n|                  |\n|                  |\n|------------------|','|------------------|\n|                  |\n|                  |\n|                  |\n|            =     |\n|------------------|','|------------------|\n|                  |\n|                  |\n|            |     |\n|            =     |\n|------------------|','|------------------|\n|                  |\n|            |     |\n|            |     |\n|            =     |\n|------------------|','|------------------|\n|            |     |\n|            |     |\n|            |     |\n|            =     |\n|------------------|','|------------------|\n|           -|     |\n|            |     |\n|            |     |\n|            =     |\n|------------------|','|------------------|\n|          --|     |\n|            |     |\n|            |     |\n|            =     |\n|------------------|','|------------------|\n|         ---|     |\n|            |     |\n|            |     |\n|            =     |\n|------------------|','|------------------|\n|        /---|     |\n|            |     |\n|            |     |\n|            =     |\n|------------------|','|------------------|\n|        /---|     |\n|        o   |     |\n|      --|-- |     |\n|       / \  =     |\n|------------------|']
-
 lista_palabras = open('palabras.txt').read().splitlines()
 mi_palabra = ''
 intento = 0
 
+def clear():
+	if aos == 'Windows':
+		os.system('cls')
+	if aos == 'Linux':
+		os.system('clear')
+
 while True:
 	palabra_correcta = random.choice(lista_palabras)
-	os.system('cls')
+	clear()
 	print("====================")
 	print("|   EL AHORCADO    |")
 	print("====================")
@@ -32,7 +38,7 @@ while True:
 	if option == 1:
 
 		while True:
-			os.system('cls')
+			clear()
 			fallas = 0
 			print(idraw[intento])
 			for i in palabra_correcta:
