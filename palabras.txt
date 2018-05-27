@@ -1,0 +1,16 @@
+perro\n
+gato
+avion
+ensalada
+micro ondas
+caballo
+tigre
+elefante
+caminar
+panadero
+bombero
+taxi
+escopeta
+cucaracha
+autobus
+bicicleta
