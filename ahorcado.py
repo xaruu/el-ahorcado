@@ -28,7 +28,10 @@ while True:
 	while True:
 		try:
 			option = int(input("\n[?] Que deseas hacer? -> "))
-			break
+			if option > 2 or option < 0:
+				print("[!] Selecciona una opcion valida.")
+			else:
+				break
 		except ValueError:
 			print("[!] Usa el numero acorde a tu eleccion.")
 
@@ -56,13 +59,22 @@ while True:
 
 			if intento == 9:
 				print("\nPERDISTE!!!")
-				print("La palabra era: \'%s\'" % (palabra_correcta))
+				print("La palabra era: %s" % (palabra_correcta))
 				input('Presiona para volver al menu.')
 				intento = 0
 				mi_palabra = ''
 				break
 
-			mi_letra = input("\n[*] Introduce tu letra: ")
+			while True:
+				try:
+					mi_letra = input("\n[*] Introduce tu letra: ")
+					if len(mi_letra) > 1:
+						print("[!] Solo puedes usar una letra por turno.")
+					else:
+						break
+				except:
+					pass
+
 			mi_palabra += mi_letra
 
 			if mi_letra not in palabra_correcta:
